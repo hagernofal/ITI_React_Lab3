@@ -5,6 +5,7 @@ import MainLayout from './components/Layouts/MainLayout';
 import Cart from './components/Pages/Cart';
 import ProductsList from './components/Pages/ProductsList';
 import ProductDetails from './components/Pages/ProductDetails';
+import Register from './components/Pages/Register';
 import NotFound from './components/Pages/NotFound404';
 import { productsLoader, productsLoaderDetails } from './components/Pages/AxiosInstance';
 import './index.css';
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: '/cart',
         element: <Cart />
+      },
+      {
+        path: '/register',
+        element: <Register />
       },
 
     ]
