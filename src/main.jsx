@@ -8,6 +8,9 @@ import ProductDetails from './components/Pages/ProductDetails';
 import NotFound from './components/Pages/NotFound404';
 import { productsLoader, productsLoaderDetails } from './components/Pages/AxiosInstance';
 import './index.css';
+import { Provider } from 'react-redux';
+import { store } from './store/store.js';
+import LanguageProvider from './context/LanguageContext'; 
 const router = createBrowserRouter([
   {
     path: '*',
@@ -39,6 +42,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <LanguageProvider>
+      <RouterProvider router={router} />
+      </LanguageProvider>
+    </Provider>
   </React.StrictMode>
 );
